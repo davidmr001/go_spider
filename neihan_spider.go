@@ -34,7 +34,7 @@ type Spider struct {
 
 func (this *Spider) Store_one_page(titles []string, contents []string) error {
 
-	filename := "myDuanzi.txt"
+	filename := "./file/myDuanzi.txt"
 
 	f, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND|os.O_RDWR, 0644)
 	if err != nil {
@@ -95,7 +95,7 @@ func (this *Spider) Spider_one_page() {
 		url = "https://www.neihanba.com/dz/list_" + strconv.Itoa(this.Page) + ".html"
 	}
 
-	//fmt.Println(url)
+	fmt.Println(url)
 
 	//爬取第一页
 	content, rcode := this.HttpGet(url)
@@ -156,7 +156,7 @@ func (this *Spider) HttpGet(url string) (content string, statusCode int) {
 	out := make([]byte, len(data))
 	out = out[:]
 
-	ic.Convert(data, out, "gb2312", "utf-8")
+	iconv.Convert(data, out, "gb2312", "utf-8")
 
 	content = string(out)
 	statusCode = resp.StatusCode
