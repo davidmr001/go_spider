@@ -4,3 +4,6 @@
 ## 启动方式
 
 go run neihan_spider.go
+
+##退出方式
+ctrl +c
