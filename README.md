@@ -5,10 +5,7 @@
 
 go run neihan_spider.go
 
-##退出方式
+## 退出方式
 
 ctrl +c
 
-##123123
-
-123123
